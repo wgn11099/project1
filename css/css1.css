@@ -1,0 +1,753 @@
+/* * {
+    padding:0; margin:0;
+} *通配符，但是一般用到哪个就写哪个*/
+body,ul,p,h1,h2,h3,h4,dl,dd,form,input,textarea,select{
+    padding: 0;margin: 0; font-family: arial;
+}
+li{
+    list-style: none;
+}
+img{border: none;}
+a{text-decoration: none;}
+a:hover{text-decoration: underline;}
+body{background: #ffffff url(../img/body_bg.png) repeat-x;}
+/*#ffffff:添加白色可以使用户简单地更改界面颜色*/
+/*黑色条样式*/
+#top{
+    width: 960px;
+    height: 30px;
+    margin:0 auto;
+}
+
+.top_menu{ float: left}
+.top_menu li{
+    float: left;
+    background: url(../img/top_ico.png) no-repeat right 14px ;
+    font-size: 13px;
+    line-height: 30px;/*居中*/
+    padding-right: 18px;/*字到方点的右边距离18个像素*/
+    margin-right: 15px;
+}
+.top_menu a{
+    color: #c0c0c0;
+}
+.top_menu a:hover{
+    color: #ffffff;
+}
+.top_menu .no_dot{
+    background: none;
+    padding: 0;/*点去掉了，内边距还在，使得top_bar跑到下方去了*/
+}
+
+.top_bar{float: right}
+.top_bar li{
+    float: left;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 30px;
+    /*padding-left: 38px; */ /*文字的左侧内边距*/
+    /*padding-right: 38px;*//*文字的右侧边距*/
+    /*padding: 0 38px;*/
+}
+.ie6_img img{
+    float: left;
+    position: relative;
+    top: 10px;
+}
+.top_bar .phone{
+    background: url(../img/top_ico.png) no-repeat 4px -17px;
+    padding: 0 38px;
+}
+.top_bar .help{
+    background: url(../img/top_ico.png) no-repeat 0 -47px;
+    padding: 0 38px;
+}
+.top_bar .help a{
+    color: #ffffff;
+}
+.top_bar .space{
+    margin-right: 12px;
+    /*防止点空白处时，出现可以点击连接状态，不要用padding*/
+}
+
+
+/*头部样式*/
+#header{
+    width: 960px;
+    height: 100px;
+    margin: 0 auto;/*居中*/
+    position: relative;
+    background: url(../img/border_bg.png) no-repeat;
+}
+#shopping{
+    width: 260px;
+    height: 100px;
+    background: url(../img/shopping_bg.png) no-repeat;
+    position: relative;
+}
+#shopping p{
+    font-size: 20px;
+    color: #f7f7f7;
+    font-family: arial;
+    padding :32px 0 0 86px;/*上右下左*/
+}
+#shopping a {
+    display: block;
+    width: 114px;
+    height:23px;
+    background: url(../img/shopping_bg.png) no-repeat 0 -100px;
+    position:absolute;
+    top: 63px;
+    left: 104px;
+    color: #ffc200;
+    font-size: 15px;
+    font-family: Arial;
+    font-weight: bold;
+    text-align: center;
+    line-height: 23px;/*字体居中，根据shopping_bg高度决定*/
+}
+#shopping a:hover{
+    color: #FF6600;
+}
+#header h1{
+    width: 238px;
+    position: absolute;/*以下居中定位*/
+    top:0;
+    left:50%;
+    margin-left: -119px;
+}
+
+#header .search{
+    position: absolute;
+    top: 33px;;
+    right: 0;
+}
+
+.search {
+    position: absolute;
+    width: 292px;
+    height: 31px;
+    background: url(../img/search.png) no-repeat;
+}
+.search .text{
+    /*float:left;*/
+    position: absolute;/*使用绝对定位，不使用浮动*/
+    top: 0;
+    left: 20px;
+    width: 230px;/*250-20  search前有20px距离*/
+    height: 31px;
+    line-height: 31px;/*ie6后加的兼容性*/
+    background: none;/*初始化它自带的样式*/
+    border:none;/*初始化它自带的样式*/
+    font-size: 13px;
+    color:#666666;
+    outline: none;/*取消谷歌中的外边框*/
+}
+.search .btn{
+    /*float:right;*/
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 42px;
+    height: 31px;
+    background: none;/*初始化它自带的样式*/
+    border:none;/*初始化它自带的样式*/
+}
+
+/*导航条样式*/
+#nav{
+    width: 960px;
+    height: 36px;/*原来44px-内边距8px=36px*/
+    margin: 0 auto;
+    padding-top: 8px;
+}
+#nav li{
+     float: left;
+    height: 28px;
+    margin-right: 3px;/*设置两个列表项之间的距离*/
+}
+#nav a{
+    float: left;
+    height: 28px;
+    /*background: url(../images/nav_active_bg.png) repeat-x 0 -56px;*/
+    font-size: 16px;
+    color: #ffffff;
+    font-family: "Arial Narrow";
+    line-height: 28px;
+    text-decoration: none;
+    cursor: pointer;/*ie6添加的*/
+}
+#nav strong{
+    float: left;
+    height: 28px;
+    /*background: url(../images/nav_active_bg.png) no-repeat;*/
+    font-weight: normal;
+}
+#nav span{
+    float: left;
+    height: 28px;
+   /* background: url(../images/nav_active_bg.png) no-repeat right -28px;*/
+    padding: 0 18px;
+
+}
+/*鼠标移入的时候才出现背景*//*第一个HOME是默认有这个背景的*/
+#nav a:hover,#nav .active a{
+    background: url(../img/nav_active_bg.png) repeat-x 0 -56px;
+}
+#nav a:hover strong,#nav .active strong{
+    background: url(../img/nav_active_bg.png) no-repeat;
+}
+#nav a:hover span,#nav .active span{
+    background: url(../img/nav_active_bg.png) no-repeat right -28px;
+}
+/*内容*/
+#content{
+    width: 1000px;
+    margin: 24px auto 0;/*上部，左右自动，下部*/
+    background: url(../img/content_bg.png) repeat-y -1000px 0;
+
+}
+#content_top{
+    width: 1000px;
+    background: url(../img/content_bg.png) no-repeat;
+
+}
+#content_bottom{
+    width: 1000px;
+    /*水平方向，垂直方向*/
+    background: url(../img/content_bg.png) no-repeat -2000px bottom;
+    padding-top: 10px;/*效果相同*/
+}
+
+#ad{
+    width: 940px;
+    height: 300px;
+    position: relative;
+    margin: 0 auto;
+    /*top: 10px;*/
+}
+#ad ul,#ad li,#ad h2,#ad p,#ad .bg{
+    position: absolute;
+}
+#ad ul{
+    /*position: absolute;*/
+    top:  0;
+    left: 0;
+    z-index: 1;/*层级定位*/
+}
+#ad li{
+    /*position: absolute;*/
+    top:  0;
+    left: 0;
+    /*CSS中的滤镜，透明度，filter只能IE能用，其他浏览器只用opacity*/
+    filter:alpha(opacity=0); opacity:0;
+}
+#ad h2{
+    /*position: absolute;*/
+    bottom: 9px;
+    left: 0;
+    z-index: 3;
+    width: 268px;
+    text-align: center;
+    color: #ffc600;
+    font-size: 25px;
+    font-weight: bold;
+}
+#ad p{
+    /*position: absolute;*/
+    bottom:  7px;
+    left: 268px;
+    z-index: 3;
+    color: #ffcccc;
+    font-size: 13px;
+    width: 628px;
+    line-height: 16px;
+}
+#ad .bg{
+    width: 940px;
+    height: 52px;
+    background: #000;
+    filter: alpha(opacity:80);/*滤镜：设置黑色背景的不透明度为80%，这是IE下的*/
+    opacity: 0.8;/*非IE下的设置不透明度*/
+    /*position: absolute;*/
+    bottom: 0;/*左下角*/
+    left: 0;
+    z-index: 2;
+}
+
+#ad .next,#ad .prev{
+    width:75px;
+    height:150px;
+    margin-top:-75px;
+    position:absolute;
+    top:50%;
+    z-index:6;
+    display:none;
+}
+#ad .prev { background:url(../img/banner/prev.png); left:0; }
+#ad .next { background:url(../img/banner/next.png); right:0; }
+
+#ad .prev_bg,#ad .next_bg {
+    position:absolute;
+    top:0;
+    z-index:5;
+    width:470px;
+    height:300px;
+    filter:alpha(opacity:0); opacity:0;
+}
+
+#ad .prev_bg { left:0; background:yellow; }
+#ad .next_bg { right:0; background:red; }
+
+#main{
+    width: 942px;
+    margin: 0 auto;/*居中显示*/
+    padding-top: 30px;
+}
+/*侧边栏*/
+#side{
+    width: 210px;/*尽可能是偶数像素*/
+    float: left;
+}
+#wrap{
+    width: 706px;
+    float: right;
+}
+/*由于side和wrap加了浮动，下面样式为了去除父级main的浮动*/
+.clear{
+    zoom: 1;/*父级有宽可以不写，父级没宽必须写*/
+}
+.clear:after{/*after伪类清除浮动*/
+    content: '';
+    display: block;
+    clear: both;/*清除浮动*/
+}
+
+.module_menu{
+    margin-bottom: 13px;/*与下面module_join模块的之间距离*/
+}
+.module_menu h2{
+    height: 29px;
+    background: url(../img/module_menu_bg.png) repeat-x 0 -58px;
+    color: #ffffff;
+    font-size: 15px;
+    line-height: 29px;  /*垂直居中用行高*/
+    text-align: center; /*水平居中用text-align*/
+    font-weight: bold;
+    margin-bottom: 1px;/*白色空隙1px*/
+}
+/*strong span是不认高的，需添加display:block*/
+.module_menu h2 strong{
+    display: block;
+    height: 29px;
+    background: url(../img/module_menu_bg.png) no-repeat;
+}
+.module_menu h2 span{
+    display: block;
+    height: 29px;
+    background: url(../img/module_menu_bg.png) no-repeat right -29px;
+}
+
+.list {
+    background: url(../img/list_bg.png) repeat-y ;
+    /*padding: 0 8px;!*上下、左右*!*//*效果不好删掉*/
+}
+.list ul{
+    background: url(../img/list_bg.png) no-repeat -210px bottom;
+    /*padding-top: 18px;*/
+    padding: 18px 8px 15px;/*上，左右，下*/
+}
+.list a{
+    display: block;
+    height: 27px;
+    line-height: 27px;
+    border-bottom: 1px solid #ffffff;
+    text-decoration: none;
+    color: #434343;
+    font-size: 12px;
+    font-weight: bold;
+    padding-left: 33px;
+}
+.list a:hover{
+    color: #b20e00;
+    border-bottom: 1px solid #b20e00;
+    background: #fae191;/*自己加的*/
+    text-decoration: none;/*为ie6添加的消除字符的文本下划线*/
+}
+
+.module_join{
+    width: 210px;
+    background: url(../img/list_bg.png) repeat-y -630px 0;/*左 上*/
+}
+.module_join_top{
+    width: 210px;
+    background: url(../img/list_bg.png) no-repeat -420px 0;
+}
+.module_join_bottom{
+    width: 210px;
+    background: url(../img/list_bg.png) no-repeat -840px bottom;
+}
+
+.Join_form{
+    width: 180px;
+    margin: 0 auto 12px;/*居中*//*按钮与下面的图标间隔13px，偶数12px*/
+}
+.Join_form p{
+    font-size: 15px;
+    color: #666666;
+    line-height: 18px;
+    padding: 12px 0;
+}
+.Join_form .text{
+    width: 175px;
+    height: 25px;
+    line-height: 25px;/*设置行高，使得文字垂直居中*/
+    background: #ffffff;
+    border-left: 1px solid #c0c0c0;
+    border-top: 1px solid #9c9c9c;
+    border-bottom: 1px solid #ffffff;
+    border-right: 1px solid #ffffff;
+    margin-bottom: 7px;
+}
+.Join_form .btn{
+    width: 88px;
+    height: 25px;
+    border: none;
+    background: url(../img/join_now_bg.png) no-repeat;
+    font-size: 15px;
+    font-weight: bold;
+    color: #ffffff;
+    display: block;
+    margin: 0 auto;/*居中,以上两句搭配使用*/
+}
+
+.Join_list {
+    width: 192px;/*到白色空隙的左右边界*/
+    margin: 0 auto;
+    background: url(../img/li_ico.png) no-repeat 10px 0;/*图标距离白色空隙左边界有10px*/
+}
+.Join_list li{
+    border-top: 1px solid #ffffff;
+    padding-left: 62px;
+    font-size: 13px;
+    color: #434343;
+
+}
+.Join_list .space1{
+    height: 45px;
+    line-height: 45px;
+}
+.Join_list .space2{
+    height: 43px;/*48-5*/
+    padding-top: 5px;
+    line-height: 18px;
+}
+.Join_list .space3{
+    height: 41px;/*50-9*/
+    line-height: 18px;
+    padding-top: 9px;
+}
+.Join_list .space4{
+    height: 47px;/*50-3*/
+    line-height: 18px;
+    padding-top: 3px;
+}
+
+#payment{
+    margin: 33px 0 0 18px;
+}
+
+.sort{
+    height: 20px;/*原来19px*/
+}
+.sort dl{
+    float: left;
+    /*浮动的话，必须清浮动，但是如果父类.sort有行高的话不用清浮动*/
+}
+.sort dt{
+    float: left;
+    color: #747474;
+    font-size: 12px;
+    font-weight: bold;
+    padding-right: 2px;/*右内边距量得3px，但是默认有1px*/
+}
+.sort dd{
+    float: left;
+    position: relative;
+    width: 109px;
+    height: 19px;
+    margin-right: 12px;
+}
+.sort h2{
+    width: 107px;
+    height: 17px;
+    border: 1px solid #cccccc;
+    font-size: 12px;
+    color: #747474;
+    font-weight: normal;
+    text-indent: 5px;/*文本缩进5个像素*/
+}
+/*a元素是不认宽高的*/
+.sort a{
+    position: absolute;/*用定位转换为认宽和高*/
+    width: 19px;
+    height: 19px;
+    top: 0;
+    left: 90px;/*dd宽的109px-a的宽19px*/
+    background: url(../img/sort_ico.png) no-repeat;
+    z-index: 2;
+}
+.sort a:hover{
+    background: url(../img/sort_ico.png) no-repeat -19px 0;/*左，上*/
+}
+.sort ul{
+    width: 107px;
+    border: 1px solid #cccccc;
+    position: absolute;/*相对父类dd定位*/
+    top: 18px;
+    left: 0;
+    z-index: 1;
+    display: none;/*将列表隐藏起来*/
+    background: #FFFFFF;
+}
+.sort li{
+    font-size: 12px;
+    line-height: 20px;
+    text-indent: 5px;
+    cursor: pointer;/*变换鼠标呈现方式*/
+}
+.sort ul .active{
+    background: #009999;
+    color: #ffffff;
+}
+.sort p{
+    float: right;
+    color: #747474;
+    font-size: 12px;
+}
+.sort p strong{
+    color: #999999;
+
+}
+.sort p  span{
+    padding: 0 6px;
+}
+.color_style{
+    color: #b20e00;
+}
+
+.pic_list{
+    width: 706px;
+    overflow: hidden;/*溢出隐藏掉*/
+}
+/*两者的h2标题文字样式相同*/
+.pic_list h2, #scroll_list h2{
+    height:56px;
+    line-height:62px;
+    overflow:hidden;
+    font-size:18px;
+    color:#666;
+}
+
+.pic_list ul{
+    width: 736px;
+}
+.pic_list li{
+    float: left;
+    width: 182px;/*原来184px*/
+    /*margin-bottom: 46px;*/
+    height: 200px;/*和margin-bottom一样效果，只是这个更精确*/
+}
+.pic_list a{
+    display: block;/*连接元素不认宽高*/
+    width: 154px;
+    height: 114px;
+    border: 1px solid #c6c6c6;
+    margin-bottom: 6px;/*和h3之间的距离*/
+}
+.pic_list a:hover{
+    border: 1px solid #b20e00;
+}
+.pic_list h3{
+    color: #666666;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 16px;
+}
+.pic_list p{
+    color: #333333;
+    font-size: 13px;
+    line-height: 16px;
+}
+.pic_list p span{
+    color: #b20e00;
+}
+/*翻页代码实现*/
+.page{
+    text-align: center;
+    border-bottom: 1px solid #cdcdc8;
+    padding-bottom: 5px;
+}
+.page a{
+    display: inline-block;
+    height: 20px;
+    padding: 0 7px;/*宽无法确定，先用padding挤出来点*/
+    color: #b20e00;
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+
+}
+.page a:hover, .page .active{
+    color: #FFFFFF;
+    background: #b20e00;
+}
+.page span{
+    font-family: '宋体';
+}
+/*滚动图片列表*/
+#scroll_list h2{
+    text-indent: 6px;
+}
+.scroll_wrap{
+    height: 196px;
+    background: url(../img/scroll_bg.gif) repeat-x 0 -478px;
+
+}
+.scroll_warp_left{
+    height: 196px;
+    background: url(../img/scroll_bg.gif) no-repeat 0 -86px;
+}
+.scroll_warp_right{
+    height: 196px;
+    background: url(../img/scroll_bg.gif) no-repeat right -282px;
+    position: relative;
+}
+.prev, .next{
+    width: 35px;
+    height: 43px;
+    position: absolute;
+    top: 70px;/*原来是71px*/
+}
+.prev{
+    left: 0;
+    background: url(../img/scroll_bg.gif) no-repeat;
+}
+.next{
+    right: 0;
+    background: url(../img/scroll_bg.gif) no-repeat right -43px;
+}
+
+.list_wrap{
+    width: 615px;/*619px*/
+    margin: 0 auto;
+    padding-top:  32px;
+    overflow: hidden;
+    position: relative;
+}
+/*由于三幅图片的间隔不同，需要重新进行规划*/
+.list_wrap ul{
+    height: 150px;
+    position: relative;
+}
+.list_wrap li{
+    width: 205px;/*145+两个内边距30px*/
+    float: left;
+}
+.list_wrap a{
+    display: block;
+    width: 145px;
+    height: 99px;
+    margin: 0 auto;
+    border: 1px solid #c2c2c2;
+}
+.list_wrap p{
+    color: #660000;
+    font-size: 12px;
+    width: 145px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 14px;
+    padding-top: 10px;
+}
+
+#footer{
+    margin-top: 27px;
+    height: 302px;
+    background: url(../img/footer_bg.png) repeat-x ;
+}
+#footer_top{
+    height: 60px;
+    width: 940px;
+    margin: 0 auto;
+    position: relative;
+}
+#footer_top p{
+    height: 60px;
+    color: #cbcbcb;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 60px;
+    float: left;
+}
+#footer_top .secured{
+    background: url(../img/footer_ico.png) no-repeat 0 4px;
+    text-indent: 62px;
+    margin-right: 26px;
+}
+#footer_top .ship{
+    background: url(../img/footer_ico.png) no-repeat 0 -56px;
+    text-indent: 50px;
+}
+#footer_top .search{
+    position: absolute;
+    top: 15px;
+    right: -10px;
+}
+
+#footer_bottom{
+    width: 920px;
+    margin:0 auto;
+    overflow:hidden;
+    padding-top:20px;
+}
+#footer_bottom dl{
+    float:left;
+    width:184px;/*920/5*/
+}
+#footer_bottom dt{
+    font-size:15px;
+    color:#fff;
+    font-weight:bold;
+    line-height:50px;
+}
+#footer_bottom dd{
+    line-height:20px;
+}
+#footer_bottom a{
+    font-size:13px;
+    color:#cfcfcf;
+}
+#footer_bottom .pos{
+    position: relative;
+    left: -20px;
+}
+#footer_bottom .space5{
+    padding-top:20px;
+}
+#footer_bottom span {
+    color: #ffcc00;
+}
+
+
+
+
+
+
+
+
+
+
+
+
